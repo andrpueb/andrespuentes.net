@@ -1,0 +1,111 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
+
+body{
+	max-width: 1366px;
+	background-color: #C1BBBB;
+}
+
+#sideMenu{
+	background-color: #222f4a;
+	background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
+	height: 100vh;
+	width: 25vw;
+	position: fixed;
+}
+
+#logoContainer{
+	display: flex;
+	justify-content: center;
+	padding-top: 100px;
+	}
+
+#name{
+	margin: 0px; /*quitarle el margin al titulo*/
+}
+
+#optionsMenu{
+	margin-top: 10vh;
+	text-align: center;
+	width: 70%;
+
+}
+
+.option{
+	font-size: 2em;
+	color: #D2D7DA;
+	font-family: 'Exo 2', sans-serif;
+	margin-bottom: 5px;
+	border-radius: 20px;
+	border: 1px solid white;
+	display: flex;
+	justify-content: center;
+}
+
+.option:hover{
+	background-color: rgba(19, 25, 36, 0.5);
+	cursor: pointer;
+	-webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+
+}
+
+
+#title{
+	color: #E5E2E2;
+	font-family: 'Exo 2', sans-serif;
+	position: relative;
+	padding-top: 50px;
+	text-align: center;
+}
+
+#socialMenu{
+	padding-top: 5vh;
+	text-align: center;
+	color: #D2D7DA;
+	font-size: 20px;
+	width: 70%;
+}
+
+.social:hover{
+	background-color: rgba(19, 25, 36, 0.5);
+	cursor: pointer;
+    transition: background-color 300ms ease-out;
+}
+
+
+
+/*Skill Page*/
+
+#about{
+	position: absolute;
+	margin-left: 30vw;
+}
+
+#aboutTitle{
+	width: 60vw;
+	height: 10em;
+	background-color: rgba(199, 217, 218);
+	border-radius: 10px;
+	text-align: center;
+}
+
+#tutorials{
+	position: absolute;
+	margin-left: 30vw;
+
+}
+
+#tutorials{
+	width: 60vw;
+	height: 10em;
+	background-color: rgba(199, 217, 218);
+	opacity: 0.5;
+	border-radius: 10px;
+	text-align: center;
+}
