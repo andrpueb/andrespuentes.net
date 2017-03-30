@@ -7,65 +7,79 @@
 
 body{
 	max-width: 1366px;
-	background-color: #C1BBBB;
+	
 }
 
 #sideMenu{
 	background-color: #222f4a;
 	background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
-	height: 100vh;
+	height: 100%;
 	width: 25vw;
 	position: fixed;
+	z-index: 1;
+	padding-top: 10%;
+	padding-bottom: 10%;
 }
 
 #logoContainer{
 	display: flex;
 	justify-content: center;
-	padding-top: 100px;
 	}
 
+h2{
+	margin-top: 0px !important;/*remove h2 margins*/
+	margin-bottom: 0px !important;
+}
+
+#title{
+	right: 5px;
+	opacity: 0;
+	width: 100%;
+}
+
 #name{
-	margin: 0px; /*quitarle el margin al titulo*/
+	padding-left: 10px;
+}
+#lastName{
+	padding-right: 10px;
 }
 
 #optionsMenu{
-	margin-top: 10vh;
+	margin-top: 10%;
 	text-align: center;
 	width: 70%;
-
 }
 
 .option{
-	font-size: 2em;
+	font-size: 17px;
 	color: #D2D7DA;
-	font-family: 'Exo 2', sans-serif;
 	margin-bottom: 5px;
 	border-radius: 20px;
 	border: 1px solid white;
 	display: flex;
 	justify-content: center;
+	padding-top: 10px;
+	font-family: 'Quando', serif;
 }
 
 .option:hover{
 	background-color: rgba(19, 25, 36, 0.5);
+	border-color: orange;
 	cursor: pointer;
-	-webkit-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
-
 }
-
 
 #title{
 	color: #E5E2E2;
-	font-family: 'Exo 2', sans-serif;
 	position: relative;
 	padding-top: 50px;
 	text-align: center;
+	font-family: 'Quando', serif;
 }
 
+/*social buttons*/
+
 #socialMenu{
-	padding-top: 5vh;
+	padding-top: 5px;
 	text-align: center;
 	color: #D2D7DA;
 	font-size: 20px;
@@ -75,37 +89,29 @@ body{
 .social:hover{
 	background-color: rgba(19, 25, 36, 0.5);
 	cursor: pointer;
+	border-radius: 20px;
     transition: background-color 300ms ease-out;
 }
 
 
+/*sections common style*/
 
-/*Skill Page*/
-
-#about{
+.page{
 	position: absolute;
-	margin-left: 30vw;
+	margin-left: 25vw;
+	height: 100vh;
+	width: 75vw;
+	border-left: rgba(255, 152, 0,1) solid 1px;
+	background-color: #DCE3E3;
 }
 
-#aboutTitle{
-	width: 60vw;
-	height: 10em;
-	background-color: rgba(199, 217, 218);
-	border-radius: 10px;
-	text-align: center;
-}
-
-#tutorials{
-	position: absolute;
-	margin-left: 30vw;
-
-}
-
-#tutorials{
-	width: 60vw;
-	height: 10em;
-	background-color: rgba(199, 217, 218);
-	opacity: 0.5;
-	border-radius: 10px;
-	text-align: center;
+.pageTitle{
+	background-color: rgba(255, 152, 0, 0.7);
+	padding: 20px;
+	width: 100%;
+	text-align: left;
+	color: #B64926;
+	font-family: 'Quando', serif;
+	position: relative;
+	z-index: 3;
 }
