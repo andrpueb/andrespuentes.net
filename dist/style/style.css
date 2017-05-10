@@ -1,0 +1,108 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif; }
+
+html {
+  font-size: 100%; }
+
+body {
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  flex-flow: row; }
+
+.menu {
+  height: 100%;
+  width: 25%;
+  min-width: 350px;
+  color: #FFFAD5; }
+  .menu .nav-wrapper {
+    position: fixed;
+    background-color: #BD4932;
+    height: 100%;
+    width: 25%;
+    font-family: "Comfortaa", cursive;
+    min-width: 350px;
+    display: flex;
+    flex-flow: column; }
+    .menu .nav-wrapper .menu__logo-box {
+      min-width: 200px;
+      width: auto;
+      height: 30%;
+      margin: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .menu .nav-wrapper .menu__logo-box .logo-box__logo {
+        width: 200px; }
+    .menu .nav-wrapper .menu__title {
+      opacity: 0;
+      height: 20%;
+      width: 100%;
+      font-size: 1.5em;
+      max-width: 100%; }
+      .menu .nav-wrapper .menu__title .menu__text {
+        display: inline; }
+      .menu .nav-wrapper .menu__title .menu__name {
+        padding-left: 20px; }
+      .menu .nav-wrapper .menu__title .menu__last-name {
+        padding-right: 20px; }
+    .menu .nav-wrapper .menu__nav {
+      height: 40%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      justify-content: center; }
+      .menu .nav-wrapper .menu__nav .menu__button {
+        font-size: 1em;
+        transition: all 500ms ease;
+        padding: 5px; }
+      .menu .nav-wrapper .menu__nav .menu__button:hover {
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transform: scale(1.01);
+        transform: translateZ(0);
+        /*previene que el texto se vuelva borroso durante la animacion*/ }
+
+.social-menu {
+  height: 10%;
+  color: #FFFAD5;
+  font-size: 1.5em;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+  .social-menu .social {
+    padding: 10px;
+    transition: box-shadow 200ms ease;
+    height: 20px;
+    display: flex;
+    align-items: center; }
+  .social-menu .social:hover {
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+
+.page {
+  height: 5000px;
+  width: 75%;
+  background-color: #dce3e3;
+  background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  flex-shrink: 5;
+  min-width: 400px; }
+  .page .pageTitle {
+    background-color: #EFEFEF;
+    height: 10vh;
+    width: 100%;
+    text-align: left;
+    background-color: #083a70;
+    background-image: url("https://www.transparenttextures.com/patterns/darth-stripe.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    font-family: 'Quando', serif;
+    display: inline-block;
+    -webkit-box-shadow: 0px 3px 9px -2px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0px 3px 9px -2px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 3px 9px -2px rgba(0, 0, 0, 0.8); }
