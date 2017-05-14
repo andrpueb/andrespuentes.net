@@ -10,6 +10,7 @@ var
   cssnano = require('gulp-cssnano'),
   imagemin = require('gulp-imagemin'),
   htmlmin = require('gulp-htmlmin'),
+  //browserSync = require('browser-sync');
 
 
 
@@ -26,6 +27,8 @@ gulp.task('styles', function() {
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist/./'));
 });
+
+gulp.task ('styles-watch', ['styles']);
 
 gulp.task('js', function() {
   return gulp.src('src/**/*.js')
@@ -50,6 +53,7 @@ gulp.task('webserver', function() {
   connect.server();
 });
 
+
 //Watch task
 gulp.task('run', ['minify', 'cssnano', 'js','images']);
 
@@ -59,7 +63,7 @@ gulp.task('watch',function() {
 
     gulp.watch('src/**/*.js',['js']);
 
-    gulp.watch('src/**/*.scss',['styles']);
+    gulp.watch('src/**/*.scss',['styles-watch']);
 });
 
 gulp.task('default', ['run', 'watch']);
