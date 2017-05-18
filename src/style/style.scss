@@ -7,6 +7,8 @@ $headTextColor: #F4F7F8;
 $headBackground: #417378;
 $headFont: 'Comfortaa', cursive;
 $contentFont: 'Old Standard TT', serif;
+$skillFont: 'Athiti', sans-serif;
+$skillStarColor: #91AA9D;
 
 html {
   font-size: 1em;
@@ -82,7 +84,7 @@ body {
   background-color: #fff;
   justify-content: center;
   font-family: $headFont;
-  color: #417378;
+  color: $headBackground;
   box-sizing: border-box;
 
   .flex_nav {
@@ -97,12 +99,17 @@ body {
       transition: all 500ms ease;
       padding: 5px;
       cursor: pointer;
+      border-bottom: 1px solid #Fff;
+    }
+    .nav_btn:hover{
+      color: #BD4932;
+      border-bottom: 1px solid #BD4932;
     }
   }
 }
 
 .cont_box{
-  width: 960px;
+  width: 80%;
   margin: auto;
   font-family: $contentFont;
   padding-top: 20px;
@@ -110,6 +117,73 @@ body {
   }
 
 .about{
-  background-color: #A4CFBE;
+  background-color: #445878;
   height: 500px;
   }
+
+.skillsWrapper{
+  .cont_box{
+    background-color: #FCFFF5;
+    padding: 0px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-family: $skillFont;
+    box-sizing: border-box;
+    h1{
+      margin: 0px;
+    }
+    .priSkills{
+      width: 80%;
+      display: flex;
+      font-size: 1.5em;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 30px;
+
+    }
+    .secSkills{
+      width: 100%;
+      display: flex;
+      font-size: 1em;
+      justify-content: space-around;
+      margin: 30px;
+      flex-wrap: wrap;
+    }
+    .skill_box{
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      .skill{
+        color: #445878;
+        border-bottom: 2px solid #445878;
+        border-top: 2px solid #445878;
+        border-left: 2px solid #FCFFF5;
+        border-right: 2px solid #FCFFF5;
+        padding: 20px;
+        border-radius: 5px 30px 5px;
+        transition: border linear 500ms;
+        margin: auto;
+      }
+      .fa-star, .fa-star-o, .fa-star-half-o{
+        font-size: 15px;
+        color: $skillStarColor;
+        transition: 500ms linear;
+      }
+      .skill:hover{
+        border: 2px solid #BD4932;
+        border: 2px solid #BD4932;
+      }
+      .skill:hover + .skill_stars i{
+        color: #BD4932;
+      }
+    }
+
+  }//cont_box
+
+}//skillsWrapper
+
+.projects{
+  height: 500px;
+  background-color: #91AA9D;
+}

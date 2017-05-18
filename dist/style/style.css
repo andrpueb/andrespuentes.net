@@ -73,15 +73,71 @@ body {
       font-size: 1em;
       transition: all 500ms ease;
       padding: 5px;
-      cursor: pointer; }
+      cursor: pointer;
+      border-bottom: 1px solid #Fff; }
+    .nav .flex_nav .nav_btn:hover {
+      color: #BD4932;
+      border-bottom: 1px solid #BD4932; }
 
 .cont_box {
-  width: 960px;
+  width: 80%;
   margin: auto;
   font-family: "Old Standard TT", serif;
   padding-top: 20px;
   font-size: 1.5em; }
 
 .about {
-  background-color: #A4CFBE;
+  background-color: #445878;
   height: 500px; }
+
+.skillsWrapper .cont_box {
+  background-color: #FCFFF5;
+  padding: 0px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: "Athiti", sans-serif;
+  box-sizing: border-box; }
+  .skillsWrapper .cont_box h1 {
+    margin: 0px; }
+  .skillsWrapper .cont_box .priSkills {
+    width: 80%;
+    display: flex;
+    font-size: 1.5em;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px; }
+  .skillsWrapper .cont_box .secSkills {
+    width: 100%;
+    display: flex;
+    font-size: 1em;
+    justify-content: space-around;
+    margin: 30px;
+    flex-wrap: wrap; }
+  .skillsWrapper .cont_box .skill_box {
+    display: flex;
+    flex-flow: column;
+    align-items: center; }
+    .skillsWrapper .cont_box .skill_box .skill {
+      color: #445878;
+      border-bottom: 2px solid #445878;
+      border-top: 2px solid #445878;
+      border-left: 2px solid #FCFFF5;
+      border-right: 2px solid #FCFFF5;
+      padding: 20px;
+      border-radius: 5px 30px 5px;
+      transition: border linear 500ms;
+      margin: auto; }
+    .skillsWrapper .cont_box .skill_box .fa-star, .skillsWrapper .cont_box .skill_box .fa-star-o, .skillsWrapper .cont_box .skill_box .fa-star-half-o {
+      font-size: 15px;
+      color: #91AA9D;
+      transition: 500ms linear; }
+    .skillsWrapper .cont_box .skill_box .skill:hover {
+      border: 2px solid #BD4932;
+      border: 2px solid #BD4932; }
+    .skillsWrapper .cont_box .skill_box .skill:hover + .skill_stars i {
+      color: #BD4932; }
+
+.projects {
+  height: 500px;
+  background-color: #91AA9D; }
