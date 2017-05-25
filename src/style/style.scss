@@ -1,14 +1,12 @@
-@import url(http://weloveiconfonts.com/api/?family=brandico);
 
-[class*="brandico-"]:before {
-  font-family: 'brandico', sans-serif;
-}
 $headTextColor: #F4F7F8;
 $headBackground: #417378;
 $headFont: 'Comfortaa', cursive;
-$contentFont: 'Old Standard TT', serif;
+$contentFont: 'Droid Serif', serif;
 $skillFont: 'Athiti', sans-serif;
 $skillStarColor: #91AA9D;
+$thumbnailFont: 'Imprima', sans-serif;
+$titlesFont: 'Kite One', sans-serif;
 
 html {
   font-size: 1em;
@@ -20,15 +18,24 @@ body {
   box-sizing: border-box;
 }
 
-.flex_wrapper {
-  display: flex;
-  flex-flow: column;
+h1 {
+  color: #212121;
+  font-weight: lighter;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: $titlesFont;
+}
+
+.inner_box {
+  width: 80%;
+  margin: auto;
+  font-size: 1.5em;
 }
 
 .head {
-  background-color: $headBackground;
+  background-color: $headTextColor;
   font-family: $headFont;
-  color: $headTextColor;
+  color: $headBackground;
   padding: 10px 100px;
   flex: 0 0 100%;
   display: flex;
@@ -56,23 +63,22 @@ body {
   }
 }
 
-  .social-head {
-    color: #2C3E50;
-    font-size: 1.5em;
-    flex: 0 0 30%;
+.social-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  ul{
+    padding: 0px;
+    list-style-type: none;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    .social {
-      margin-right: 10px;
-      padding: 5px;
-      transition: box-shadow 200ms ease;
-      height: 20px;
-      display: flex;
-      align-items:center;
-      justify-content: space-around;
-      cursor: pointer;
+  }
+  li{
+    margin-right: 10px;
+    width: 30px;
+    display: inline-block;
   }
 }
 
@@ -81,109 +87,173 @@ body {
   height: 30px;
   align-items: center;
   flex: 0 0 100%;
-  background-color: #fff;
+  background-color: $headTextColor;
   justify-content: center;
   font-family: $headFont;
   color: $headBackground;
   box-sizing: border-box;
-
+  border-bottom: 1px solid #BD4932;
+  border-top: 1px solid #BD4932;
   .flex_nav {
     display: flex;
     flex: 0 0 80%;
     justify-content: space-around;
     padding: 0;
-
     .nav_btn {
       list-style-type: none;
       font-size: 1em;
-      transition: all 500ms ease;
+      transition: all 250ms ease;
       padding: 5px;
       cursor: pointer;
-      border-bottom: 1px solid #Fff;
-    }
-    .nav_btn:hover{
-      color: #BD4932;
-      border-bottom: 1px solid #BD4932;
     }
   }
 }
 
-.cont_box{
-  width: 80%;
-  margin: auto;
-  font-family: $contentFont;
-  padding-top: 20px;
-  font-size: 1.5em;
-  }
-
-.about{
-  background-color: #445878;
+.about {
+  padding-top: 25px;
   height: 500px;
+  background-color: #314755;
+  color: #fff;
+  font-family: $skillFont;
+
+}
+  .about_inner{
+    width: 80%;
+    margin: auto;
+    font-size: 1.2em;
+}
+
+//*******SKILLS****
+
+.skillsWrapper {
+  background: #E4EBEB;
+  display: flex;
+  flex-flow: column;
+  font-family: $thumbnailFont;
+  box-sizing: border-box;
+  padding: 20px 0;
+  .priSkills {
+    width: 80%;
+    display: flex;
+    font-size: 1.5em;
+    justify-content: space-around;
+    margin: auto;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+  }
+  .secSkills {
+    margin: auto;
+    width: 60%;
+    display: flex;
+    font-size: 1em;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
-.skillsWrapper{
-  .cont_box{
-    background-color: #FCFFF5;
-    padding: 0px;
+  .skill_box {
     display: flex;
     flex-flow: column;
     align-items: center;
-    font-family: $skillFont;
-    box-sizing: border-box;
-    h1{
-      margin: 0px;
-    }
-    .priSkills{
-      width: 80%;
-      display: flex;
-      font-size: 1.5em;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      margin: 30px;
 
-    }
-    .secSkills{
-      width: 100%;
+    .skill {
+      box-sizing: border-box;
+      width: 75px;
+      height: 75px;
+      color: #445878;
+      border-radius: 50%;
+      border: 1px solid #BD4932;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+      transition: border linear 500ms;
+      margin: auto;
       display: flex;
-      font-size: 1em;
-      justify-content: space-around;
-      margin: 30px;
-      flex-wrap: wrap;
-    }
-    .skill_box{
-      display: flex;
-      flex-flow: column;
       align-items: center;
-      .skill{
-        color: #445878;
-        border-bottom: 2px solid #445878;
-        border-top: 2px solid #445878;
-        border-left: 2px solid #FCFFF5;
-        border-right: 2px solid #FCFFF5;
-        padding: 20px;
-        border-radius: 5px 30px 5px;
-        transition: border linear 500ms;
-        margin: auto;
-      }
-      .fa-star, .fa-star-o, .fa-star-half-o{
-        font-size: 15px;
-        color: $skillStarColor;
-        transition: 500ms linear;
-      }
-      .skill:hover{
-        border: 2px solid #BD4932;
-        border: 2px solid #BD4932;
-      }
-      .skill:hover + .skill_stars i{
-        color: #BD4932;
-      }
+      justify-content: center;
+
     }
 
-  }//cont_box
+    .fa-star,
+    .fa-star-half-o,
+    .fa-star-o {
+      font-size: 15px;
+      color: $skillStarColor;
+      transition: 500ms linear;
+    }
 
-}//skillsWrapper
+    .skill:hover + .skill_stars i {
+      color: #BD4932;
+    }
+  }
+  //cont_box
+}
+//skillsWrapper
 
-.projects{
+.projects {
+  padding: 25px;
+  height: auto;
+  background: #fff;
+  .projects_box {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    .project_details{
+      width: 100%;
+      margin: 10px;
+      font-family: $thumbnailFont;
+    }
+    .thumb_details{
+      top: 0;
+      display: inline-block;
+      li{
+        list-style-type: none;
+        line-height: 25px;
+      }
+    }
+    .thumb_img{
+      display: inline-block;
+      img{
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin: 0 20px;
+        box-shadow: 22px 23px 42px -19px rgba(0,0,0,1);
+      }
+    }
+  }
+}
+
+//Contact
+
+.contact{
   height: 500px;
-  background-color: #91AA9D;
+
+}
+
+
+
+//Animations
+//Thumbnails appear when scrolling
+.projectOne {
+  text-align: left;
+  opacity: 0;
+  transition: 500ms all ease-in;
+
+}
+
+.projectTwo{
+  text-align: right;
+  opacity: 0;
+  transition: 500ms all ease-in;
+}
+.animate-thumb{
+  transform: translateX(-50px);
+  animation: thumbnails 500ms linear forwards;
+  opacity: 1;
+}
+
+@keyframes thumbnails {
+  0%{ transform: translateX(-50px);}
+  50%{ transform: translateX(-25px);}
+  100%{ transform: translateX(0px); }
 }
