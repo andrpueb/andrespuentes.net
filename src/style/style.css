@@ -125,7 +125,7 @@ body {
   height: 5000px;
   width: 75%;
   background-color: #dce3e3;
-  
+
   -webkit-flex-shrink: 5;
   -ms-flex-negative: 5;
   flex-shrink: 5;

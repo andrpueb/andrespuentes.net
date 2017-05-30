@@ -1,12 +1,12 @@
-
-$headTextColor: #F4F7F8;
+$headTextColor: #ECF0F1;
 $headBackground: #417378;
-$headFont: 'Comfortaa', cursive;
+$headFont: 'Proza Libre', sans-serif;
 $contentFont: 'Droid Serif', serif;
 $skillFont: 'Athiti', sans-serif;
 $skillStarColor: #91AA9D;
 $thumbnailFont: 'Imprima', sans-serif;
-$titlesFont: 'Kite One', sans-serif;
+$titlesFont: 'Playfair Display', serif;
+$titleColor: #2C3E50;
 
 html {
   font-size: 1em;
@@ -16,26 +16,20 @@ body {
   width: 100%;
   margin: 0;
   box-sizing: border-box;
+  background: #282E33;
 }
 
 h1 {
-  color: #212121;
+  color: $titleColor;
+  font-size: 1.5em;
+  text-align: left;
+  font-family: $headFont;
   font-weight: lighter;
-  font-size: 1.5em;
-  text-align: center;
-  font-family: $titlesFont;
-}
-
-.inner_box {
-  width: 80%;
-  margin: auto;
-  font-size: 1.5em;
 }
 
 .head {
-  background-color: $headTextColor;
   font-family: $headFont;
-  color: $headBackground;
+  color: $headTextColor;
   padding: 10px 100px;
   flex: 0 0 100%;
   display: flex;
@@ -67,15 +61,17 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  ul{
-    padding: 0px;
+  width: 20%;
+
+  ul {
+    padding: 0;
     list-style-type: none;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
   }
-  li{
+
+  li {
     margin-right: 10px;
     width: 30px;
     display: inline-block;
@@ -87,65 +83,89 @@ h1 {
   height: 30px;
   align-items: center;
   flex: 0 0 100%;
-  background-color: $headTextColor;
   justify-content: center;
-  font-family: $headFont;
-  color: $headBackground;
+  font-family: 'Anaheim', sans-serif;
+  color: #E74C3C;
+  font-size: 1.2em;
   box-sizing: border-box;
-  border-bottom: 1px solid #BD4932;
-  border-top: 1px solid #BD4932;
+
   .flex_nav {
     display: flex;
     flex: 0 0 80%;
     justify-content: space-around;
     padding: 0;
+
     .nav_btn {
       list-style-type: none;
       font-size: 1em;
-      transition: all 250ms ease;
-      padding: 5px;
       cursor: pointer;
     }
   }
+
+  .nav_btn {
+    position: relative;
+    margin: auto;
+  }
+  //Nav Btns hover transition
+  .nav_btn:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-bottom: 1px solid rgba(189, 73, 50,0.5);
+    transition: 250ms all ease-out;
+  }
+
+  .nav_btn:hover:before {
+    width: 100%;
+    transform: translatex(0px);
+  }
 }
+//Nav buttons Animation
 
 .about {
-  padding-top: 25px;
-  height: 500px;
-  background-color: #314755;
+  padding: 20px 50px;
+  min-height: 50vh;
   color: #fff;
   font-family: $skillFont;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-}
-  .about_inner{
-    width: 80%;
-    margin: auto;
+  .about_text {
     font-size: 1.2em;
-}
+    flex: 1 1 400px;
+    align-self: center;
+  }
 
+  .about_image {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      border-radius: 50%;
+      max-width: 200px;
+      height: auto;
+      padding: 5px;
+      border-left: 1px solid orange;
+      border-top: 1px solid orange;
+    }
+  }
+}
 //*******SKILLS****
 
-.skillsWrapper {
-  background: #E4EBEB;
-  display: flex;
-  flex-flow: column;
-  font-family: $thumbnailFont;
+.skills {
   box-sizing: border-box;
-  padding: 20px 0;
-  .priSkills {
-    width: 80%;
+  background: #ECF0F1;
+  padding: 25px;
+
+  .skills_inner {
     display: flex;
-    font-size: 1.5em;
-    justify-content: space-around;
-    margin: auto;
-    flex-wrap: wrap;
-    padding-bottom: 50px;
-  }
-  .secSkills {
-    margin: auto;
-    width: 60%;
-    display: flex;
-    font-size: 1em;
+    font-family: $thumbnailFont;
     justify-content: space-around;
     flex-wrap: wrap;
   }
@@ -154,106 +174,111 @@ h1 {
     display: flex;
     flex-flow: column;
     align-items: center;
+    flex: 1;
+    margin: 20px;
 
-    .skill {
-      box-sizing: border-box;
-      width: 75px;
-      height: 75px;
-      color: #445878;
-      border-radius: 50%;
-      border: 1px solid #BD4932;
-      border-left: 1px solid transparent;
-      border-right: 1px solid transparent;
-      transition: border linear 500ms;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-    }
-
-    .fa-star,
-    .fa-star-half-o,
-    .fa-star-o {
-      font-size: 15px;
-      color: $skillStarColor;
-      transition: 500ms linear;
-    }
-
-    .skill:hover + .skill_stars i {
-      color: #BD4932;
+    .devicon {
+      width: 30%;
     }
   }
-  //cont_box
 }
+
+.fa-star,
+.fa-star-half-o,
+.fa-star-o {
+  font-size: 15px;
+  color: $skillStarColor;
+  transition: 250ms linear;
+}
+
+.devicon:hover + .skill_stars i {
+  color: #BD4932;
+}
+//cont_bo
 //skillsWrapper
 
 .projects {
   padding: 25px;
   height: auto;
-  background: #fff;
+  background: #ECF0F1;
+
   .projects_box {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     width: 80%;
-    .project_details{
+
+    .project_details {
       width: 100%;
       margin: 10px;
       font-family: $thumbnailFont;
     }
-    .thumb_details{
+
+    .thumb_details {
       top: 0;
       display: inline-block;
-      li{
+
+      li {
         list-style-type: none;
         line-height: 25px;
       }
     }
-    .thumb_img{
+
+    .thumb_img {
       display: inline-block;
-      img{
+      position: relative;
+
+      img {
         width: 100%;
         height: auto;
-        border-radius: 10px;
+        border: 4px solid #2C3E50;
         margin: 0 20px;
         box-shadow: 22px 23px 42px -19px rgba(0,0,0,1);
       }
     }
   }
 }
-
 //Contact
 
-.contact{
+.contact {
   height: 500px;
-
 }
-
-
-
 //Animations
 //Thumbnails appear when scrolling
+
 .projectOne {
   text-align: left;
   opacity: 0;
   transition: 500ms all ease-in;
-
 }
 
-.projectTwo{
+.projectTwo {
   text-align: right;
   opacity: 0;
   transition: 500ms all ease-in;
 }
-.animate-thumb{
+
+.project {
+  text-align: right;
+  opacity: 0;
+  transition: 500ms all ease-in;
+}
+
+.animate-thumb {
   transform: translateX(-50px);
   animation: thumbnails 500ms linear forwards;
   opacity: 1;
 }
-
 @keyframes thumbnails {
-  0%{ transform: translateX(-50px);}
-  50%{ transform: translateX(-25px);}
-  100%{ transform: translateX(0px); }
+  0% {
+    transform: translateX(-50px);
+  }
+
+  50% {
+    transform: translateX(-25px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
 }
