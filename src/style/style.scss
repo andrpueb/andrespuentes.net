@@ -1,7 +1,7 @@
 $headTextColor: #ECF0F1;
 $headBackground: #417378;
 $headFont: 'Proza Libre', sans-serif;
-$contentFont: 'Droid Serif', serif;
+$contentFont: 'Anaheim', sans-serif;
 $skillFont: 'Athiti', sans-serif;
 $skillStarColor: #91AA9D;
 $thumbnailFont: 'Imprima', sans-serif;
@@ -12,11 +12,16 @@ html {
   font-size: 1em;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   width: 100%;
   margin: 0;
   box-sizing: border-box;
   background: #282E33;
+  font-family: $headFont;
 }
 
 h1 {
@@ -30,18 +35,16 @@ h1 {
 .head {
   font-family: $headFont;
   color: $headTextColor;
-  padding: 10px 100px;
-  flex: 0 0 100%;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 
   .head__title {
     opacity: 0;
     font-size: 1.5em;
     display: flex;
     flex-flow: column;
-    align-items: flex-start;
-    flex: 0 0 30%;
 
     .head__name {
       padding-left: 50px;
@@ -55,26 +58,26 @@ h1 {
       font-size: 0.8em;
     }
   }
-}
 
-.social-head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-
-  ul {
-    padding: 0;
-    list-style-type: none;
-    width: 100%;
+  .social__head {
     display: flex;
-    justify-content: space-between;
-  }
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 200px;
 
-  li {
-    margin-right: 10px;
-    width: 30px;
-    display: inline-block;
+    ul {
+      padding: 0;
+      list-style-type: none;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    li {
+      margin-right: 10px;
+      width: 30px;
+      display: inline-block;
+    }
   }
 }
 
@@ -87,24 +90,24 @@ h1 {
   font-family: 'Anaheim', sans-serif;
   color: #E74C3C;
   font-size: 1.2em;
-  box-sizing: border-box;
 
   .flex_nav {
     display: flex;
     flex: 0 0 80%;
     justify-content: space-around;
     padding: 0;
-
-    .nav_btn {
-      list-style-type: none;
-      font-size: 1em;
-      cursor: pointer;
-    }
   }
 
   .nav_btn {
+    list-style-type: none;
+    font-size: 1em;
+    cursor: pointer;
     position: relative;
-    margin: auto;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
   //Nav Btns hover transition
   .nav_btn:before {
@@ -119,32 +122,33 @@ h1 {
   }
 
   .nav_btn:hover:before {
+    z-index: -2;
     width: 100%;
-    transform: translatex(0px);
   }
 }
 //Nav buttons Animation
 
 .about {
-  padding: 20px 50px;
+  width: 70%;
+  margin: auto;
   min-height: 50vh;
   color: #fff;
   font-family: $skillFont;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  padding-bottom: 20px;
 
   .about_text {
     font-size: 1.2em;
-    flex: 1 1 400px;
+    flex: 0 1 500px;
     align-self: center;
   }
 
   .about_image {
-    flex: 1 1 400px;
+    flex-basis: 200px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin: auto;
 
     img {
       border-radius: 50%;
@@ -169,17 +173,16 @@ h1 {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-
   .skill_box {
+    margin-bottom: 20px;
     display: flex;
     flex-flow: column;
     align-items: center;
-    flex: 1;
-    margin: 20px;
-
-    .devicon {
-      width: 30%;
+    flex: 0 100px;
+    .skill_name{
+      font-size: 1.2em;
     }
+
   }
 }
 
@@ -193,6 +196,10 @@ h1 {
 
 .devicon:hover + .skill_stars i {
   color: #BD4932;
+}
+
+.devicon:hover + .skill_name{
+  font-size: 1.4em;
 }
 //cont_bo
 //skillsWrapper
@@ -238,11 +245,6 @@ h1 {
     }
   }
 }
-//Contact
-
-.contact {
-  height: 500px;
-}
 //Animations
 //Thumbnails appear when scrolling
 
@@ -280,5 +282,62 @@ h1 {
 
   100% {
     transform: translateX(0px);
+  }
+}
+//Contact
+
+.contact {
+  padding: 25px;
+
+  h1 {
+    color: #ECF0F1;
+  }
+
+  .form {
+    flex-flow: column;
+    display: flex;
+    max-width: 400px;
+    margin: auto;
+
+    .form_field {
+      margin-bottom: 20px;
+    }
+
+    input[type=email],
+    input[type=text] {
+      color: #ECF0F1;
+      border: none;
+      width: 100%;
+      box-sizing: border-box;
+      font-family: $skillFont;
+      background-color: #282E33;
+      border-bottom: #E74C3C solid 1px;
+    }
+
+    textarea {
+      background-color: #282E33;
+      border: #E74C3C solid 1px;
+      width: 100%;
+      font-family: $skillFont;
+      color: #ECF0F1;
+    }
+
+    input:focus,
+    textarea:focus {
+      /* Para dar un pequeño destaque en elementos activos*/
+      border-color: yellow;
+      background-color: #555555;
+    }
+  }
+}
+
+.foot {
+  height: 10vh;
+  background-color: #E74C3C;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .about {
+    width: 90%;
   }
 }
