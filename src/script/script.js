@@ -47,6 +47,18 @@ $(document).ready(function() {
     offset: '80%'
   })
 
+var $projectThree = $('.projectThree');
+
+$projectThree.waypoint(function(direction) {
+  if (direction == "down") {
+    $projectThree.addClass('animate-thumb');
+  } else {
+    $projectThree.removeClass('animate-thumb');
+  }
+
+}, {
+  offset: '80%'
+})
 
   var $contactForm = $('#contact-form');
   $contactForm.submit(function(e) {
