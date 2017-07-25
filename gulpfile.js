@@ -10,6 +10,7 @@ var
   cssnano = require('gulp-cssnano'),
   imagemin = require('gulp-imagemin'),
   htmlmin = require('gulp-htmlmin'),
+  autoprefixer = require('gulp-autoprefixer');
 
 
 
@@ -45,13 +46,23 @@ gulp.task('minify', function() {
     .pipe(gulp.dest('dist/./'));
 });
 
+
+gulp.task('prefix', function(){
+    gulp.src('dist/**/*.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('dist/./'))
+});
+
 //gulp web server
 gulp.task('webserver', function() {
   connect.server();
 });
 
 //Watch task
-gulp.task('run', ['minify', 'cssnano', 'js']);
+gulp.task('run', ['minify', 'cssnano', 'js', 'prefix']);
 
 gulp.task('watch',function() {
 

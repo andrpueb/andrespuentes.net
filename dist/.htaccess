@@ -9,4 +9,6 @@ AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 AddOutputFilter DEFLATE .shtml
+AddType image/svg+xml .svg
+AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>

@@ -96,18 +96,15 @@ $projectThree.waypoint(function(direction) {
 	    });
 	});
 
-var myUrl = document.URL;
-var mySource = /source=.*?($|_)/.exec(myUrl);
-console.log(myUrl)
+//Here we apply the saved source to the form
 
-if(mySource != null){
-  sessionStorage.setItem('source', mySource[0]);
-}else{
-  sessionStorage.setItem('source', 'empty');
-}
+$('#contact-form').append(
+  '<div class="form_field" style="display:none"><input id="formSource" name="source" /></div>'
+);
 
-
-
+var source = sessionStorage.getItem('source');
+console.log(source);
+$('#formSource').val(source);
 
 
 
