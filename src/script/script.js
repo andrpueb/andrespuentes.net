@@ -34,7 +34,7 @@ $(document).ready(function() {
   });
 
 
-//contact form
+  //contact form
   var n = $("#contact-form");
   n.submit(function(e) {
     e.preventDefault(), $.ajax({
@@ -54,7 +54,7 @@ $(document).ready(function() {
     })
   });
 
-//auto scroll
+  //auto scroll
   $('a[href^="#"]').on("click", function(e) {
     e.preventDefault();
     var a = this.hash,
@@ -68,27 +68,51 @@ $(document).ready(function() {
 
   //tag manager
 
-  $('.nav_btn').on('click', function(){
-    if($(this).attr('id') == 'about_btn'){
+  $('.nav_btn').on('click', function() {
+    if ($(this).attr('id') == 'about_btn') {
       dataLayer.push({
-        'myVariable' : 'itWorks!',
+        'myVariable': 'itWorks!',
         'navBtnClicked': 'about',
-        'event' : 'navClicked'
+        'event': 'navClicked'
       });
-    }else if($(this).attr('id') == 'projects_btn'){
+    } else if ($(this).attr('id') == 'projects_btn') {
       dataLayer.push({
-        'myVariable' : 'itWorks!',
+        'myVariable': 'itWorks!',
         'navBtnClicked': 'projects',
-        'event' : 'navClicked'
+        'event': 'navClicked'
       });
-    }else if($(this).attr('id') == 'contact_btn'){
+    } else if ($(this).attr('id') == 'contact_btn') {
       dataLayer.push({
-        'myVariable' : 'itWorks!',
+        'myVariable': 'itWorks!',
         'navBtnClicked': 'contact',
-        'event' : 'navClicked'
+        'event': 'navClicked'
       });
     }
   })
+
+  $('.goToSite').on('click', function() {
+    if ($(this).parent().parent().hasClass('projectOne')) {
+      dataLayer.push({
+        'project': 'Ceramind.co',
+        'event': 'Project Clicked'
+      });
+    } else if ($(this).parent().parent().hasClass('projectTwo')) {
+      dataLayer.push({
+        'project': 'Frogger',
+        'event': 'Project Clicked'
+      });
+    } else if ($(this).parent().parent().hasClass('projectThree')) {
+      dataLayer.push({
+        'project': 'Google Maps',
+        'event': 'Project Clicked'
+      });
+    }
+  })
+
+
+
+
+
 
   dataLayer.push({
     'event': 'page has loaded'
