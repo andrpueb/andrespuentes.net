@@ -1,133 +1,98 @@
 $(document).ready(function() {
-  $('.head__name').animate({
-    'padding-left': '0px'
-  }, 1000);
-
-  $('.head__last-name').animate({
-    'padding-left': '50px'
-  }, 1000);
-
-
-  $('.head__title').animate({
-    opacity: '1'
+  $(".head__name").animate({
+    "padding-left": "0px"
+  }, 1e3), $(".head__last-name").animate({
+    "padding-left": "50px"
+  }, 1e3), $(".head__title").animate({
+    opacity: "1"
   }, {
-    duration: 1000,
-    queue: false
-  }); // queue es para que inicie inmediatamente y no espera que la animacin anterior termine
-
-  $('#pagTitle').animate({
-    'padding': '+=5px'
+    duration: 1e3,
+    queue: !1
+  }), $("#pagTitle").animate({
+    padding: "+=5px"
   }, 800);
 
 
-  var $projectOne = $('.projectOne');
-
-  $projectOne.waypoint(function(direction) {
-    if (direction == "down") {
-      $projectOne.addClass('animate-thumb');
-    } else {
-      $projectOne.removeClass('animate-thumb');
-    }
-
+  //waypoints
+  var e = $(".projectOne");
+  e.waypoint(function(a) {
+    "down" == a ? e.addClass("animate-thumb") : e.removeClass("animate-thumb")
   }, {
-    offset: '80%'
-  })
-
-
-  var $projectTwo = $('.projectTwo');
-
-  $projectTwo.waypoint(function(direction) {
-    if (direction == "down") {
-      $projectTwo.addClass('animate-thumb');
-    } else {
-      $projectTwo.removeClass('animate-thumb');
-    }
-
+    offset: "80%"
+  });
+  var a = $(".projectTwo");
+  a.waypoint(function(e) {
+    "down" == e ? a.addClass("animate-thumb") : a.removeClass("animate-thumb")
   }, {
-    offset: '80%'
-  })
-
-var $projectThree = $('.projectThree');
-
-$projectThree.waypoint(function(direction) {
-  if (direction == "down") {
-    $projectThree.addClass('animate-thumb');
-  } else {
-    $projectThree.removeClass('animate-thumb');
-  }
-
-}, {
-  offset: '80%'
-})
-
-  var $contactForm = $('#contact-form');
-  $contactForm.submit(function(e) {
-  	e.preventDefault();
-  	$.ajax({
-  		url: '//formspree.io/me@andrespuentes.net',
-  		method: 'POST',
-  		data: $(this).serialize(),
-  		dataType: 'json',
-  		beforeSend: function() {
-  			$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
-  		},
-  		success: function(data) {
-  			$contactForm.find('.alert--loading').hide();
-  			$contactForm.append('<div class="alert alert--success">Message sent!</div>');
-  		},
-  		error: function(err) {
-  			$contactForm.find('.alert--loading').hide();
-  			$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
-  		}
-  	});
+    offset: "80%"
+  });
+  var t = $(".projectThree");
+  t.waypoint(function(e) {
+    "down" == e ? t.addClass("animate-thumb") : t.removeClass("animate-thumb")
+  }, {
+    offset: "80%"
   });
 
 
-  $('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
+//contact form
+  var n = $("#contact-form");
+  n.submit(function(e) {
+    e.preventDefault(), $.ajax({
+      url: "//formspree.io/me@andrespuentes.net",
+      method: "POST",
+      data: $(this).serialize(),
+      dataType: "json",
+      beforeSend: function() {
+        n.append('<div class="alert alert--loading">Sending message…</div>')
+      },
+      success: function(e) {
+        n.find(".alert--loading").hide(), n.append('<div class="alert alert--success">Message sent!</div>')
+      },
+      error: function(e) {
+        n.find(".alert--loading").hide(), n.append('<div class="alert alert--error">Ops, there was an error.</div>')
+      }
+    })
+  });
 
-	    var target = this.hash;
-	    var $target = $(target);
+//auto scroll
+  $('a[href^="#"]').on("click", function(e) {
+    e.preventDefault();
+    var a = this.hash,
+      t = $(a);
+    $("html, body").stop().animate({
+      scrollTop: t.offset().top
+    }, 900, "swing", function() {
+      window.location.hash = a
+    })
+  });
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 900, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
+  //tag manager
 
-var myUrl = document.URL;
-var mySource = /source=.*?($|_)/.exec(myUrl);
-console.log(myUrl)
-
-if(mySource != null){
-  sessionStorage.setItem('source', mySource[0]);
-}else{
-  sessionStorage.setItem('source', 'empty');
-}
-
-
-
-
-
-
-
-
-/*
-  function getSource(){
-    var myUrl = document.URL;
-    //var mySource = /source=.*?($|_)/.exec(myUrl);
-
-    function sendSource(){
-      console.log(myUrl);
+  $('.nav_btn').on('click', function(){
+    if($(this).attr('id') == 'about_btn'){
+      dataLayer.push({
+        'myVariable' : 'itWorks!',
+        'navBtnClicked': 'about',
+        'event' : 'navClicked'
+      });
+    }else if($(this).attr('id') == 'projects_btn'){
+      dataLayer.push({
+        'myVariable' : 'itWorks!',
+        'navBtnClicked': 'projects',
+        'event' : 'navClicked'
+      });
+    }else if($(this).attr('id') == 'contact_btn'){
+      dataLayer.push({
+        'myVariable' : 'itWorks!',
+        'navBtnClicked': 'contact',
+        'event' : 'navClicked'
+      });
     }
-    return sendSource;
-  };
+  })
 
-  var sendSource = getSource();
-  sendSource();
-
-*/
+  dataLayer.push({
+    'event': 'page has loaded'
+  })
 
 
 });
