@@ -73,19 +73,19 @@ $(document).ready(function() {
       dataLayer.push({
         'myVariable': 'itWorks!',
         'navBtnClicked': 'about',
-        'event': 'navClicked'
+        'event': 'Navigation Clicked'
       });
     } else if ($(this).attr('id') == 'projects_btn') {
       dataLayer.push({
         'myVariable': 'itWorks!',
         'navBtnClicked': 'projects',
-        'event': 'navClicked'
+        'event': 'Navigation Clicked'
       });
     } else if ($(this).attr('id') == 'contact_btn') {
       dataLayer.push({
         'myVariable': 'itWorks!',
         'navBtnClicked': 'contact',
-        'event': 'navClicked'
+        'event': 'Navigation Clicked'
       });
     }
   })
@@ -93,21 +93,25 @@ $(document).ready(function() {
   $('.goToSite').on('click', function() {
     if ($(this).parent().parent().hasClass('projectOne')) {
       dataLayer.push({
-        'project': 'Ceramind.co',
+        'projectClicked': 'Ceramind.co',
         'event': 'Project Clicked'
       });
     } else if ($(this).parent().parent().hasClass('projectTwo')) {
       dataLayer.push({
-        'project': 'Frogger',
+        'projectClicked': 'Frogger',
         'event': 'Project Clicked'
       });
     } else if ($(this).parent().parent().hasClass('projectThree')) {
       dataLayer.push({
-        'project': 'Google Maps',
+        'projectClicked': 'Google Maps',
         'event': 'Project Clicked'
       });
     }
   })
+
+
+
+
 
 
 
