@@ -34,29 +34,61 @@
       <li class="nav_btn"><span class="nav_btn_inner"><a href="index.html">Back to site</a></span></li>
     </ul>
   </nav>
-  <section class="sasstut">
-    <img class="sassImg" src="images/tutorials/sass/sass.svg" alt="sass">
-    <h1>Let's talk about SASS</h1>
+  <section class="tutorials">
+    <section class="sasstut">
+      <img class="sassImg" src="images/tutorials/sass/sass.svg" alt="sass">
+      <h1>Let's talk about SASS</h1>
 
-    <p>We are going to talk about Sass which is a CSS preprocesor that help us to give style to our markup but with extra abilties that make our code more elegant powerfull and easier to write.</p>
-    <br>
-    <p>Sass includes the following features:</p>
-    <ul>
-      <li>We can declare <b>variables</b> in a similar way than we do in javascript, so we can for example assign a color to a variable and then reuse the same variable in different parts of the code, this give us the ability to change the color in just one
-        place and see the changes in all the places where we used that variable. </li>
-      <li></li>
+      <p>We are going to talk about Sass which is a CSS preprocesor that help us to give style to our markup but with extra abilties that make our code more elegant powerfull and easier to write.</p>
+      <br>
+      <p>Sass includes the following features:</p>
+      <ul>
+        <li>We can declare <b>variables</b> in a similar way than we do in javascript, so we can for example assign a color to a variable and then reuse the same variable in different parts of the code, this give us the ability to change the color in just
+          one place and see the changes in all the places where we used that variable. </li>
+        <li></li>
 
-    </ul>
+      </ul>
+
+    </section>
+    <section class="propagationTut">
+      <h1>Event propagation</h1>
+    </section>
+
+    <section class="dataAttributesTut">
+      <h1>Data Attributes</h1>
+      <p></p>
+      <p data-dataInP="I am data">Se usan para guardar data que debe estar asociada a un elemento en particular pero que no tiene ningún significado definido, este p tiene un data attribute</p>
+    </section>
+    <section class="measProtocol">
+      <h1>Measurement Protocol</h1>
+      <p>Es una forma de enviar los hits a Analytics con toda la información sin la necesidad de que sea desde un explorador o website, lo que se hace es enviar a través de un http request la información a través de la URL, esto lo hace el servidor. A la URL se le "pega" toda la información que queremos mandar sobre el hit de acuerdo a los parametros establecidos: <a href="https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters">click aqui.</a></p>
+
+      <p>Esta es una forma en la que mando el hit a analytics a partir de un AJAX request: <br>
+      <span>
+        $.ajax({ method: "POST", url: "https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-103437329-1&cid=56bd2090-dcab-443b-aa89-3db34cccbec8&geoid=US&dp=http%3A%2F%2Fandrespuentes.net%2Ftutorials.html" })
+      </span>
+      </p>
+
+    </section>
+    <section class="glosary">
+      <h1>Glosary</h1>
+      <ul>
+        <li><strong>SDK: </strong> </li>
+      </ul>
+    </section>
+
+
 
   </section>
+
   <section class="contact" id="contact">
     <h1>Contact</h1>
     <form class="form" id="contact-form" action="//formspree.io/me@andrespuentes.net" method="post">
       <div class="form_field"><input class="form_name" type="text" name="Name" placeholder="Name" required="" /></div>
       <div class="form_field"><input class="form_email" type="email" name="Email" placeholder="Email" required="" /></div>
       <div class="form_field"><textarea class="form_msg" name="Message" cols="30" rows="6" placeholder="Message" required=""></textarea></div>
-        <!--  CONFIG  --><input class="is-hidden" type="text" name="_gotcha" style="display:none" /> <input type="hidden" name="_subject" value="Mail from andrespuentes.net" />
-        <!--  /CONFIG  --><input class="submit" type="submit" value="Send" /></div>
+      <!--  CONFIG  --><input class="is-hidden" type="text" name="_gotcha" style="display:none" /> <input type="hidden" name="_subject" value="Mail from andrespuentes.net" />
+      <!--  /CONFIG  --><input class="submit" type="submit" value="Send" /></div>
     </form>
   </section>
 

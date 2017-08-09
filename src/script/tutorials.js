@@ -106,25 +106,4 @@ var source = sessionStorage.getItem('source');
 console.log(source);
 $('#formSource').val(source);
 
-
-
-
-
-/*
-  function getSource(){
-    var myUrl = document.URL;
-    //var mySource = /source=.*?($|_)/.exec(myUrl);
-
-    function sendSource(){
-      console.log(myUrl);
-    }
-    return sendSource;
-  };
-
-  var sendSource = getSource();
-  sendSource();
-
-*/
-
-
 });
