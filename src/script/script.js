@@ -110,17 +110,4 @@ $(document).ready(function() {
   })
 
 
-
-
-
-
-
-
-
-
-  dataLayer.push({
-    'event': 'page has loaded'
-  })
-
-
 });
